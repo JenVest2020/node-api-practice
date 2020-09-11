@@ -48,7 +48,7 @@ router.delete('/:id', (req, res) => {
     const id = req.params.id;
     showsDb.remove(id)
         .then(e => {
-            if (e) {
+            if (e > 0) {
                 res.status(200).json({ message: 'The show has been deleted' });
             } else {
                 res.status(404).json({ message: 'Show not found' });
